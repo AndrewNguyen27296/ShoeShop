@@ -19,16 +19,14 @@
 	<mvc:annotation-driven>
 		<mvc:path-matching suffix-pattern="false" />
 	</mvc:annotation-driven>
-	<mvc:resources location="/assets/**" mapping="/" />
+	
+	<mvc:resources mapping="/assets/**" location="/assets/"/>
 	
 	<!-- cấu hình view -->
-	<!-- 
-	<bean id="viewResolver" 
-		p:prefix="/views/" p:suffix=".jsp"
+	<bean id="viewResolver" p:prefix="/WEB-INF/views/layout-dispatcher.jsp?view=" p:suffix=".jsp"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
-   	-->
    	
    	<!-- cấu hình controller -->
-	<context:component-scan base-package="shoeshop.controller"/>
+	<context:component-scan base-package="shoeshop.controllers,shoeshop.services"/>
 
 </beans>

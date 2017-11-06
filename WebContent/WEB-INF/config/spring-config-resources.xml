@@ -15,6 +15,7 @@
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
 	<!-- Bundle Resources -->
+	<!--
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="defaultEncoding" value="UTF-8"/>
@@ -29,4 +30,5 @@
 			</list>
 		</property>
 	</bean>
+	-->
 </beans>
