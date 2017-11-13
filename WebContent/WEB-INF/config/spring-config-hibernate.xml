@@ -19,6 +19,7 @@
 	    	class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 			p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 			p:url="jdbc:sqlserver://localhost; Database=ShoeShop">
+			
 	</bean>
 	
 	<!-- Hibernate Session Factory -->
