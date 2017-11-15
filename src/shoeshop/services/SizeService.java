@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import shoeshop.entities.Product;
+import shoeshop.entities.Size;
 
 @Component
 @Transactional
-public class ProductService {
+public class SizeService {
 	@Autowired
 	SessionFactory factory;
 
-	public void insert(Product product) {
+	public void insert(Size size) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.save(product);
+			session.save(size);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -32,11 +32,11 @@ public class ProductService {
 		}
 	}
 
-	public void update(Product product) {
+	public void update(Size size) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.update(product);
+			session.update(size);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -46,11 +46,11 @@ public class ProductService {
 		}
 	}
 
-	public void delete(Product product) {
+	public void delete(Size size) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.delete(product);
+			session.delete(size);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -60,22 +60,22 @@ public class ProductService {
 		}
 	}
 
-	public void refresh(Product product) {
+	public void refresh(Size size) {
 		Session session = factory.getCurrentSession();
-		session.refresh(product);
+		session.refresh(size);
 	}
 
-	public Product get(String id) {
+	public Size get(String id) {
 		Session session = factory.getCurrentSession();
-		Product product = (Product) session.get(Product.class, id);
-		return product;
+		Size size = (Size) session.get(Size.class, id);
+		return size;
 	}
 
-	public List<Product> list() {
-		String hql = "FROM Product";
+	public List<Size> list() {
+		String hql = "FROM Size";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
-		List<Product> list = query.list();
+		List<Size> list = query.list();
 		return list;
 	}
 

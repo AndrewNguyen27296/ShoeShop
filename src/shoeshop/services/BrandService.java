@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import shoeshop.entities.Product;
+import shoeshop.entities.Brand;
 
 @Component
 @Transactional
-public class ProductService {
+public class BrandService {
 	@Autowired
 	SessionFactory factory;
 
-	public void insert(Product product) {
+	public void insert(Brand brand) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.save(product);
+			session.save(brand);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -32,11 +32,11 @@ public class ProductService {
 		}
 	}
 
-	public void update(Product product) {
+	public void update(Brand brand) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.update(product);
+			session.update(brand);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -46,11 +46,11 @@ public class ProductService {
 		}
 	}
 
-	public void delete(Product product) {
+	public void delete(Brand brand) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.delete(product);
+			session.delete(brand);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -60,22 +60,22 @@ public class ProductService {
 		}
 	}
 
-	public void refresh(Product product) {
+	public void refresh(Brand brand) {
 		Session session = factory.getCurrentSession();
-		session.refresh(product);
+		session.refresh(brand);
 	}
 
-	public Product get(String id) {
+	public Brand get(String id) {
 		Session session = factory.getCurrentSession();
-		Product product = (Product) session.get(Product.class, id);
-		return product;
+		Brand brand = (Brand) session.get(Brand.class, id);
+		return brand;
 	}
 
-	public List<Product> list() {
-		String hql = "FROM Product";
+	public List<Brand> list() {
+		String hql = "FROM Brand";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
-		List<Product> list = query.list();
+		List<Brand> list = query.list();
 		return list;
 	}
 

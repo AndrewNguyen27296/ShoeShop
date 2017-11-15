@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import shoeshop.entities.Product;
+import shoeshop.entities.MasterRole;
 
 @Component
 @Transactional
-public class ProductService {
+public class MasterRoleService {
 	@Autowired
 	SessionFactory factory;
 
-	public void insert(Product product) {
+	public void insert(MasterRole masterRole) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.save(product);
+			session.save(masterRole);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -32,11 +32,11 @@ public class ProductService {
 		}
 	}
 
-	public void update(Product product) {
+	public void update(MasterRole masterRole) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.update(product);
+			session.update(masterRole);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -46,11 +46,11 @@ public class ProductService {
 		}
 	}
 
-	public void delete(Product product) {
+	public void delete(MasterRole masterRole) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.delete(product);
+			session.delete(masterRole);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -60,22 +60,22 @@ public class ProductService {
 		}
 	}
 
-	public void refresh(Product product) {
+	public void refresh(MasterRole masterRole) {
 		Session session = factory.getCurrentSession();
-		session.refresh(product);
+		session.refresh(masterRole);
 	}
 
-	public Product get(String id) {
+	public MasterRole get(String id) {
 		Session session = factory.getCurrentSession();
-		Product product = (Product) session.get(Product.class, id);
-		return product;
+		MasterRole masterRole = (MasterRole) session.get(MasterRole.class, id);
+		return masterRole;
 	}
 
-	public List<Product> list() {
-		String hql = "FROM Product";
+	public List<MasterRole> list() {
+		String hql = "FROM MasterRole";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
-		List<Product> list = query.list();
+		List<MasterRole> list = query.list();
 		return list;
 	}
 

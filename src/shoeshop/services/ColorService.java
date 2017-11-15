@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import shoeshop.entities.Product;
+import shoeshop.entities.Color;
 
 @Component
 @Transactional
-public class ProductService {
+public class ColorService {
 	@Autowired
 	SessionFactory factory;
 
-	public void insert(Product product) {
+	public void insert(Color color) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.save(product);
+			session.save(color);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -32,11 +32,11 @@ public class ProductService {
 		}
 	}
 
-	public void update(Product product) {
+	public void update(Color color) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.update(product);
+			session.update(color);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -46,11 +46,11 @@ public class ProductService {
 		}
 	}
 
-	public void delete(Product product) {
+	public void delete(Color color) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.delete(product);
+			session.delete(color);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -60,22 +60,22 @@ public class ProductService {
 		}
 	}
 
-	public void refresh(Product product) {
+	public void refresh(Color color) {
 		Session session = factory.getCurrentSession();
-		session.refresh(product);
+		session.refresh(color);
 	}
 
-	public Product get(String id) {
+	public Color get(String id) {
 		Session session = factory.getCurrentSession();
-		Product product = (Product) session.get(Product.class, id);
-		return product;
+		Color color = (Color) session.get(Color.class, id);
+		return color;
 	}
 
-	public List<Product> list() {
-		String hql = "FROM Product";
+	public List<Color> list() {
+		String hql = "FROM Color";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
-		List<Product> list = query.list();
+		List<Color> list = query.list();
 		return list;
 	}
 

@@ -10,19 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import shoeshop.entities.Product;
+import shoeshop.entities.ProductSize;
 
 @Component
 @Transactional
-public class ProductService {
+public class ProductSizeSizeService {
 	@Autowired
 	SessionFactory factory;
 
-	public void insert(Product product) {
+	public void insert(ProductSize productSize) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.save(product);
+			session.save(productSize);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -32,11 +32,11 @@ public class ProductService {
 		}
 	}
 
-	public void update(Product product) {
+	public void update(ProductSize productSize) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.update(product);
+			session.update(productSize);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -46,11 +46,11 @@ public class ProductService {
 		}
 	}
 
-	public void delete(Product product) {
+	public void delete(ProductSize productSize) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
-			session.delete(product);
+			session.delete(productSize);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -60,22 +60,22 @@ public class ProductService {
 		}
 	}
 
-	public void refresh(Product product) {
+	public void refresh(ProductSize productSize) {
 		Session session = factory.getCurrentSession();
-		session.refresh(product);
+		session.refresh(productSize);
 	}
 
-	public Product get(String id) {
+	public ProductSize get(String id) {
 		Session session = factory.getCurrentSession();
-		Product product = (Product) session.get(Product.class, id);
-		return product;
+		ProductSize productSize = (ProductSize) session.get(ProductSize.class, id);
+		return productSize;
 	}
 
-	public List<Product> list() {
-		String hql = "FROM Product";
+	public List<ProductSize> list() {
+		String hql = "FROM ProductSize";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
-		List<Product> list = query.list();
+		List<ProductSize> list = query.list();
 		return list;
 	}
 
