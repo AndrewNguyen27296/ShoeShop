@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -14,15 +16,11 @@ public class WebAction {
 	@Id
 	@GeneratedValue
 	Integer id;
-	
 	String name;
 	String description;
 	
-	/*
-	 * 1 One to Many (Customer)
-	 * */
 	@OneToMany(mappedBy="webAction")
-	Collection<Customer> customers;
+	Collection<ActionRole> actionRoles;
 
 	public Integer getId() {
 		return id;
@@ -48,13 +46,12 @@ public class WebAction {
 		this.description = description;
 	}
 
-	public Collection<Customer> getCustomers() {
-		return customers;
+	public Collection<ActionRole> getActionRoles() {
+		return actionRoles;
 	}
 
-	public void setCustomers(Collection<Customer> customers) {
-		this.customers = customers;
-	}
-	
+	public void setActionRoles(Collection<ActionRole> actionRoles) {
+		this.actionRoles = actionRoles;
+	}	
 	
 }

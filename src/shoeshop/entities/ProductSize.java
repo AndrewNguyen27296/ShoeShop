@@ -6,7 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="ProductSizes")
@@ -19,7 +18,6 @@ public class ProductSize {
 	//Integer sizeId;
 	
 	Integer quantity;
-	
 	
 	/*
 	 * 2 Many to One (ProductId & SizeId)
