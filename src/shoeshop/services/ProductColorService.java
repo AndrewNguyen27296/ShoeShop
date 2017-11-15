@@ -14,7 +14,7 @@ import shoeshop.entities.ProductColor;
 
 @Component
 @Transactional
-public class ProductColorColorService {
+public class ProductColorService {
 	@Autowired
 	SessionFactory factory;
 

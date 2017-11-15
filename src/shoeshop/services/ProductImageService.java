@@ -14,7 +14,7 @@ import shoeshop.entities.ProductImage;
 
 @Component
 @Transactional
-public class ProductImageImageService {
+public class ProductImageService {
 	@Autowired
 	SessionFactory factory;
 

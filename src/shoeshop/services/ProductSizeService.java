@@ -14,7 +14,7 @@ import shoeshop.entities.ProductSize;
 
 @Component
 @Transactional
-public class ProductSizeSizeService {
+public class ProductSizeService {
 	@Autowired
 	SessionFactory factory;
 
