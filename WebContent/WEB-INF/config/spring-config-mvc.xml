@@ -27,6 +27,6 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
    	
    	<!-- cấu hình controller -->
-	<context:component-scan base-package="shoeshop.controllers,shoeshop.services"/>
+	<context:component-scan base-package="shoeshop.controllers,shoeshop.admin.controllers,shoeshop.services"/>
 
 </beans>
