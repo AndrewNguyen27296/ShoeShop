@@ -1,35 +1,16 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+
 <div class="col-md-3 span_1_of_right">
 	<section class="sky-form">
 		<div class="product_right">
-			<h3 class="m_2">Categories</h3>
-			<select class="dropdown" tabindex="10"
-				data-settings='{"wrapperClass":"metro"}'>
-				<option value="0">Men's</option>
-				<option value="1">Tempor</option>
-				<option value="2">Congue</option>
-				<option value="3">Mazim </option>
-				<option value="4">Mutationem</option>
-				<option value="5">Hendrerit </option>
-			</select> <label class="me"></label> <select class="dropdown" tabindex="50"
-				data-settings='{"wrapperClass":"metro"}'>
-				<option value="1">Women's</option>
-				<option value="2">Sub Category1</option>
-				<option value="3">Sub Category2</option>
-				<option value="4">Sub Category3</option>
-			</select> <label class="wom"></label> <select class="dropdown" tabindex="8"
-				data-settings='{"wrapperClass":"metro"}'>
-				<option value="1">Kids</option>
-				<option value="2">Sub Category1</option>
-				<option value="3">Sub Category2</option>
-				<option value="4">Sub Category3</option>
-			</select> <label class="kid"></label> <select class="dropdown" tabindex="8"
-				data-settings='{"wrapperClass":"metro"}'>
-				<option value="1">Sports</option>
-				<option value="2">Sub Category1</option>
-				<option value="3">Sub Category2</option>
-				<option value="4">Sub Category3</option>
-			</select> <label class="spo"></label>
+			<h3 class="m_2"><s:message code="sidebar.categories"/></h3>
+			<div class="list-group">
+  				<a href="#" class="list-group-item list-group-item-success"><s:message code="nav.men"/></a>
+  				<a href="#" class="list-group-item list-group-item-info"><s:message code="nav.women"/></a>
+  				<a href="#" class="list-group-item list-group-item-warning"><s:message code="nav.kid"/></a>
+  				<a href="#" class="list-group-item list-group-item-danger"><s:message code="nav.sport"/></a>
+			</div>
 		</div>
 
 	</section>
@@ -77,7 +58,7 @@
 		</div>
 	</div>
 
-	<div class="sellers">
+	<!-- <div class="sellers">
 		<h3 class="m_2">Tags</h3>
 		<div class="tags">
 			<ul>
@@ -103,7 +84,7 @@
 				<li><a href="#">Tag,</a></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 
 	<section class="sky-form">
 		<div class="sellers">

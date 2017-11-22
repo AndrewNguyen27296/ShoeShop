@@ -1,7 +1,9 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+
 <div class="col-md-9">
 	<div class="biseller-info">
-		<h3 class="new-models">featured products</h3>
+		<h4 class="new-models" style="font-size: 2em;"><s:message code="index.latest"/></h4>
 		<ul id="flexiselDemo3">
 			<li>
 				<div class="biseller-column">
@@ -73,7 +75,7 @@
 	<div class="best-seller">
 
 		<div class="biseller-info">
-			<h3 class="new-models">latest products</h3>
+			<h4 class="new-models" style="font-size: 2em;"><s:message code="index.relate"/></h4>
 			<ul id="flexiselDemo1">
 				<li>
 					<div class="biseller-column">

@@ -15,20 +15,21 @@
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
 	<!-- Bundle Resources -->
-	<!--
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="defaultEncoding" value="UTF-8"/>
 		<property name="basenames">
 			<list>
-				<value>classpath:validation-student</value>
-				<value>classpath:validation-default</value>
-
 				<value>classpath:global</value>
 				<value>classpath:home</value>
 				<value>classpath:about</value>
+				<value>classpath:header</value>
+				<value>classpath:banner</value>
+				<value>classpath:footer</value>
+				<value>classpath:navigator</value>
+				<value>classpath:instock</value>
+				<value>classpath:sidebar</value>
 			</list>
 		</property>
 	</bean>
-	-->
 </beans>

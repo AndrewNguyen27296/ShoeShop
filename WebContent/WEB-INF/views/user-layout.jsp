@@ -1,10 +1,11 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html>
 <head>
 <base href="${pageContext.request.contextPath}/" />
 <meta charset="utf-8" />
-<title>Runners sport  A Ecommerce Category Flat a Bootstarp  Website Template | Home :: w3layouts</title>
+<title>Runners sport  A Ecommerce Category Flat a Bootstrap  Website Template | Home :: w3layouts</title>
 <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,6 +23,9 @@
 <script src="assets/js/menu_jquery.js"></script>
 <script src="assets/js/jquery.easydropdown.js"></script>
 <script src="assets/js/jquery.etalage.min.js"></script>
+<link rel="stylesheet" href="assets/css/footer-distributed-with-address-and-phones.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <script>
 			jQuery(document).ready(function($){
 
@@ -38,7 +42,10 @@
 
 			});
 		</script>
+
 </head>
+
+
 <body>
 	<!-- Header -->
 	<jsp:include page="user/layout/header.jsp" />
