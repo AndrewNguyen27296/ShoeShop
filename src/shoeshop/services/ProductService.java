@@ -69,11 +69,13 @@ public class ProductService {
 	public Product get(String id) {
 		Session session = factory.getCurrentSession();
 		Product product = (Product) session.get(Product.class, id);
+		Hibernate.initialize(product.getProductImages());
+		Hibernate.initialize(product.getProductSizes());
 		return product;
 	}
 
 	public List<Product> list() {
-		String hql = "FROM Product ORDER BY createDate DESC";
+		String hql = "FROM Product WHERE status = true ORDER BY createDate DESC";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
 		List<Product> list = query.list();

@@ -65,7 +65,7 @@ public class CategoryService {
 		session.refresh(category);
 	}
 
-	public Category get(String id) {
+	public Category get(Integer id) {
 		Session session = factory.getCurrentSession();
 		Category category = (Category) session.get(Category.class, id);
 		return category;

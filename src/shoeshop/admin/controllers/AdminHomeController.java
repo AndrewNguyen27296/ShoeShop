@@ -4,9 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +13,6 @@ import shoeshop.entities.Master;
 import shoeshop.services.MasterService;
 
 @Controller
-@Transactional
 @RequestMapping("admin")
 public class AdminHomeController {
 
@@ -38,13 +35,41 @@ public class AdminHomeController {
 				return "redirect:/admin/dashboard/";
 			}
 			else {
-				model.addAttribute("message", "Typed wrong password");
+				model.addAttribute("error", "Typed wrong password");
 			}			
 		}
 		catch (Exception e) {
-			model.addAttribute("message", "Typed wrong username.");
+			model.addAttribute("error", "Typed wrong username.");
 		}
 		return "admin/landing/login";
+	}
+	
+	@RequestMapping(value="forgot")
+	public String forgot(ModelMap model) {		
+		return "admin/landing/forgot";
+	}
+	
+	@RequestMapping(value="forgot", method = RequestMethod.POST)
+	public String forgot(ModelMap model,
+			@RequestParam("id") String id,
+			@RequestParam("email") String email,
+			@RequestParam("password") String password) {		
+		try {
+			Master master = masterService.get(id);
+			if (master.getEmail().equals(email)) {
+				master.setPassword(password);
+				masterService.update(master);
+				model.addAttribute("success", "Reset password successfully.");
+			}
+			else {
+				model.addAttribute("error", "Typed wrong email.");
+			}
+		}
+		catch (Exception e) {
+			model.addAttribute("error", "Typed wrong username.");
+		}	
+		
+		return "admin/landing/forgot";
 	}
 	
 }

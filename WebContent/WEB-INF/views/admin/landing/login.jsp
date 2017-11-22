@@ -17,20 +17,16 @@
 					placeholder="Password" name="password"> <i class="fa fa-key kj-icon"></i>
 			</div>
 			<div class="checkbox checkbox-primary">
-				<input id="checkbox101" type="checkbox" checked> <label
-					for="checkbox101"> Remember Me</label>
+				<input id="checkbox101" type="checkbox" checked> 
+				<label for="checkbox101"> Remember Me</label>
 			</div>
 			<button type="submit" class="btn btn-default btn-block kj-button">LOGIN</button>
 		</div>
 	</form>
-	<!-- <div class="footer-links row">
-		<div class="col-xs-6">
-			<a href="admin/register/" class="kj-link"><i class="fa fa-external-link"></i>
-				Register Now</a>
-		</div>
-		<div class="col-xs-6 text-right">
+	<div class="footer-links row">
+		<div class="col-xs-12 text-center">
 			<a href="admin/forgot/" class="kj-link"><i class="fa fa-lock"></i> Forgot
 				password</a>
 		</div>
-	</div> -->
+	</div>
 </div>

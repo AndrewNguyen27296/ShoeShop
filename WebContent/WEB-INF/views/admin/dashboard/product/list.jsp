@@ -32,51 +32,45 @@
 		<!-- Start Panel -->
 		<div class="col-md-12">
 			<div class="panel panel-default">
-				<div class="panel-title">Details</div>
+				<div class="panel-title">
+					Details
+					<a href="admin/dashboard/add/product/" class="btn btn-sm btn-info pull-right">
+						<span style="text-transform:capitalize; color:#fff;">Add new</span>
+					</a>
+				</div>
 				<div class="panel-body table-responsive">
 
 					<table id="example0" class="table display">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Name</th>								
-								<th>Brand</th>
-								<th>Sizes</th>
+								<th>Image</th>
+								<th>Name</th>	
 								<th>Price</th>
 								<th>Discount</th>
-								<th>Description</th>
-								<th>Lastest</th>
+								<th>Lastest</th>								
+								<th>Sizes & Quantity</th>
+								<th>*</th>
+								<th>*</th>
 							</tr>
 						</thead>
 
-						<tfoot>
-							<tr>
-								<th>#</th>
-								<th>Name</th>								
-								<th>Brand</th>
-								<th>Sizes</th>
-								<th>Price</th>
-								<th>Discount</th>
-								<th>Description</th>
-								<th>Lastest</th>
-							</tr>
-						</tfoot>
-
 						<tbody>
-							<c:forEach var="p" items="${prods}">
+							<c:forEach var="p" items="${prods}" varStatus="i">
 							<tr>
-								<td><img src="assets/images/products/${p.productImages[0].image}" width="80" height="60"></td>
+								<td>${i.count}</td>
+								<td><img src="assets/upload/products/files/${p.productImages[0].image}" width="80" height="60"></td>
 								<td>${p.name}</td>
-								<td>${p.brand.name}</td>
+								<td><fmt:formatNumber value="${p.price}" pattern="###,###"/></td>
+								<td>${p.discount}%</td>
+								<td><fmt:formatDate value="${p.createDate}" pattern="dd-MM-yyyy"/></td>								
 								<td>
 									<c:forEach var="z" items="${p.productSizes}">
-										${z.size.sizeVN},
+										${z.size.sizeVN}__${z.quantity} , 
 									</c:forEach>
 								</td>
-								<td><fmt:formatNumber value="${p.price}" pattern="###,###.0"/> VNĐ</td>
-								<td>${p.discount}%</td>
-								<td>${p.description}</td>
-								<td>${p.createDate}</td>
+								<td><a href="admin/dashboard/edit/product/${p.id}" class="btn btn-sm btn-primary">Edit</a></td>
+								<td><a href="admin/dashboard/delete/product/${p.id}" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a></td>
 							</tr>
 							</c:forEach>
 						</tbody>

@@ -1,11 +1,37 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<style>
+span.error {
+	color: red;
+	font-weight: bolder;
+	font-size: 1.1em;
+}
+
+span.success {
+	color: green;
+	font-weight: bolder;
+	font-size: 1.1em;
+}
+
+.kj-button {
+	background-color: #F54D4D;
+}
+
+.kj-button:focus {
+	background-color: #F54D4D;
+}
+
+.kj-button:hover {
+	background-color: #FF6161;
+}
+</style>
 <!-- Start Page Header -->
 <div class="page-header">
 	<h1 class="title">Dashboard</h1>
 	<ol class="breadcrumb">
 		<li><a href="admin/dashboard/">Dashboard</a></li>
-		<li><a href="admin/dashboard/list/products/">Products</a></li>
+		<li><a href="admin/dashboard/edit/profile/">Edit profile</a></li>
 	</ol>
 
 	<!-- Start Page Header Right Div -->
@@ -27,11 +53,9 @@
 <div class="container-padding">
 	<!-- Start Row -->
 	<div class="row">
-		<div class="col-md-12 col-lg-7 col-lg-offset-3">
+		<div class="col-md-12 col-lg-8 col-lg-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-title">
-					Edit profile
-				</div>
+				<div class="panel-title">Edit profile</div>
 
 				<div class="panel-body">
 					<form:form action="admin/dashboard/edit/profile/"
@@ -54,7 +78,11 @@
 							<label for="mobile" class="form-label">Mobile</label>
 							<form:input path="mobile" cssClass="form-control" />
 						</div>
-						<button type="submit" class="btn btn-default pull-right">Save</button>
+						<div class="form-group">
+							<span class="error">${error}</span><span class="success">${success}</span>
+							<button type="submit"
+								class="btn btn-default pull-right kj-button">Save</button>
+						</div>
 					</form:form>
 				</div>
 			</div>
@@ -64,3 +92,9 @@
 </div>
 <!-- END CONTAINER -->
 <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+

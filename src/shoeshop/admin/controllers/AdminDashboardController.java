@@ -35,16 +35,6 @@ public class AdminDashboardController {
 		return "admin/dashboard/index";
 	}
 
-	@RequestMapping("list/products")
-	public String listProduct(ModelMap modelMap) {
-		return "admin/dashboard/product/list";
-	}
-
-	@RequestMapping("list/categories")
-	public String listCategories(ModelMap modelMap) {
-		return "admin/dashboard/category/list";
-	}
-
 	@RequestMapping("edit/profile")
 	public String editProfiles(ModelMap modelMap, HttpSession httpSession) {
 		modelMap.addAttribute("master", httpSession.getAttribute("master"));
@@ -78,17 +68,17 @@ public class AdminDashboardController {
 			try {
 				Master master = masterService.get(id);
 				if (!master.getPassword().equals(password)) {
-					modelMap.addAttribute("message", "Typed wrong current password.");
+					modelMap.addAttribute("error", "Typed wrong current password.");
 				} else {
 					master.setPassword(password1);
 					masterService.update(master);
-					modelMap.addAttribute("message", "Change password successfully.");
+					modelMap.addAttribute("success", "Change password successfully.");
 				}
 			} catch (Exception e) {
-				modelMap.addAttribute("message", "Typed wrong username.");
+				modelMap.addAttribute("error", "Typed wrong username.");
 			}
 		} else {
-			modelMap.addAttribute("message", "Confirm password not matched.");
+			modelMap.addAttribute("error", "Confirm password not matched.");
 		}
 
 		return "admin/dashboard/account/change";
@@ -98,15 +88,5 @@ public class AdminDashboardController {
 	public String logout(ModelMap modelMap, HttpSession httpSession) {
 		httpSession.removeAttribute("master");
 		return "redirect:/admin/";
-	}
-
-	@ModelAttribute("prods")
-	public List<Product> getListProducts() {
-		return productService.list();
-	}
-
-	@ModelAttribute("cates")
-	public List<Category> getListCategories() {
-		return categoryService.list();
 	}
 }

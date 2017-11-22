@@ -12,7 +12,9 @@
 	content="bootstrap, admin, dashboard, flat admin template, responsive," />
 <title>Runner's Sport | Admin Dashboard</title>
 <!-- ========== Css Files ========== -->
+
 <link href="assets/admin/template/css/root.css" rel="stylesheet">
+<link href="assets/vendor/toastr/build/toastr.min.css" rel="stylesheet">
 
 <!-- ================================================
 jQuery Library
@@ -41,17 +43,7 @@ Bootstrap Toggle
 ================================================ -->
 <script type="text/javascript"
 	src="assets/admin/template/js/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-
-<!-- ================================================
-Bootstrap WYSIHTML5
-================================================ -->
-<!-- main file -->
-<script type="text/javascript"
-	src="assets/admin/template/js/bootstrap-wysihtml5/wysihtml5-0.3.0.min.js"></script>
-<!-- bootstrap file -->
-<script type="text/javascript"
-	src="assets/admin/template/js/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-
+	
 <!-- ================================================
 Summernote
 ================================================ -->
@@ -166,6 +158,11 @@ Bootstrap Date Range Picker
 <script type="text/javascript"
 	src="assets/admin/template/js/date-range-picker/daterangepicker.js"></script>
 
+
+<script type="text/javascript"
+	src="assets/vendor/toastr/build/toastr.min.js"></script>
+<script type="text/javascript"
+	src="assets/admin/js/show-toast.js"></script>
 </head>
 <body>
 	<!-- Start Page Loading -->

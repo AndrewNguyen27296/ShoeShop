@@ -65,7 +65,7 @@ public class MaterialService {
 		session.refresh(material);
 	}
 
-	public Material get(String id) {
+	public Material get(Integer id) {
 		Session session = factory.getCurrentSession();
 		Material material = (Material) session.get(Material.class, id);
 		return material;

@@ -6,7 +6,7 @@
 	<h1 class="title">Dashboard</h1>
 	<ol class="breadcrumb">
 		<li><a href="admin/dashboard/">Dashboard</a></li>
-		<li><a href="admin/dashboard/list/products/">Products</a></li>
+		<li><a href="admin/dashboard/list/categories/">Categories</a></li>
 	</ol>
 
 	<!-- Start Page Header Right Div -->
@@ -32,7 +32,12 @@
 		<!-- Start Panel -->
 		<div class="col-md-12">
 			<div class="panel panel-default">
-				<div class="panel-title">Details</div>
+				<div class="panel-title">
+					Details
+					<a href="admin/dashboard/add/category/" class="btn btn-sm btn-info pull-right">
+						<span style="text-transform:capitalize; color:#fff;">Add new</span>
+					</a>
+				</div>
 				<div class="panel-body table-responsive">
 
 					<table id="example0" class="table display">
@@ -41,23 +46,18 @@
 								<th>#</th>
 								<th>Name</th>
 								<th>Name VN</th>
+								<th>*</th>
+								<th>*</th>
 							</tr>
 						</thead>
-
-						<tfoot>
-							<tr>
-								<th>#</th>
-								<th>Name</th>
-								<th>Name VN</th>
-							</tr>
-						</tfoot>
-
 						<tbody>
 							<c:forEach var="c" items="${cates}" varStatus="i">
 								<tr>
 									<td>${i.count}</td>
 									<td>${c.name}</td>
 									<td>${c.nameVN}</td>
+									<td><a href="admin/dashboard/edit/category/${c.id}" class="btn btn-sm btn-primary">Edit</a></td>
+									<td><a href="admin/dashboard/delete/category/${c.id}" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

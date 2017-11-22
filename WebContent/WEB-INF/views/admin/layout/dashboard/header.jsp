@@ -1,5 +1,8 @@
 <%@ page pageEncoding="utf-8"%>
 <style>
+	a.logo span {
+		font-size: .8em;
+	}
 	.fa:before:hover {
 		color: #FFF;
 	}
@@ -7,7 +10,7 @@
 <div id="top" class="clearfix" style="background-color: #F54D4D;">
 	<!-- Start App Logo -->
 	<div class="applogo">
-		<a href="index.html" class="logo">ShoeShop</a>
+		<a href="index.html" class="logo"><span>ShoeShop</span></a>
 	</div>
 	<!-- End App Logo -->
 
