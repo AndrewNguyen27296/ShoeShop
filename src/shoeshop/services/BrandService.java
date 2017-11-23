@@ -65,7 +65,7 @@ public class BrandService {
 		session.refresh(brand);
 	}
 
-	public Brand get(String id) {
+	public Brand get(Integer id) {
 		Session session = factory.getCurrentSession();
 		Brand brand = (Brand) session.get(Brand.class, id);
 		return brand;

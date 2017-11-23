@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import shoeshop.entities.Product;
 import shoeshop.entities.ProductSize;
 
 @Component
@@ -77,6 +78,23 @@ public class ProductSizeService {
 		Query query = session.createQuery(hql);
 		List<ProductSize> list = query.list();
 		return list;
+	}
+
+	public void deleteByProduct(Product product) {
+		Session session = factory.openSession();
+		Transaction t = session.beginTransaction();
+		try {
+			String hql = "DELETE FROM ProductSize WHERE product.id = :id";
+			Query query = session.createQuery(hql);
+			query.setParameter("id", product.getId());
+			query.executeUpdate();
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+			throw new RuntimeException(e);
+		} finally {
+			session.close();
+		}		
 	}
 
 }

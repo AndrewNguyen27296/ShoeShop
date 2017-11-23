@@ -65,7 +65,7 @@ public class SizeService {
 		session.refresh(size);
 	}
 
-	public Size get(String id) {
+	public Size get(Integer id) {
 		Session session = factory.getCurrentSession();
 		Size size = (Size) session.get(Size.class, id);
 		return size;

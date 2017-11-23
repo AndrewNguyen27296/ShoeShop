@@ -85,8 +85,8 @@
 				<li><a class="color6" href="#"><s:message code="nav.sport"/></a></li>
 				
 				
-				<li>
-					<a class="dropdown-toggle" href="#" data-toggle="dropdown" style="margin-left: 12em;">
+				<li class="pull-right">
+					<a class="dropdown-toggle" href="#" data-toggle="dropdown">
 						<s:message code="nav.account"/>
 					</a><%-- 
 					<ul class="dropdown-menu">

@@ -2,6 +2,7 @@ package shoeshop.services;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -68,14 +69,20 @@ public class ProductService {
 	public Product get(String id) {
 		Session session = factory.getCurrentSession();
 		Product product = (Product) session.get(Product.class, id);
+		Hibernate.initialize(product.getProductImages());
+		Hibernate.initialize(product.getProductSizes());
 		return product;
 	}
 
 	public List<Product> list() {
-		String hql = "FROM Product";
+		String hql = "FROM Product WHERE status = true ORDER BY createDate DESC";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
 		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
 		return list;
 	}
 
