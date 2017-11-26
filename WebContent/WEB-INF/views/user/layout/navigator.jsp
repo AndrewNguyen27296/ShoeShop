@@ -1,14 +1,18 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
-
-<div class="head-bann">
+<style>
+</style>
+<div class="head-bann"
+	style="margin-top: 90px; position: absolute; top: 0; width: 100%;">
 	<div class="container">
 		<div class="head-nav">
 			<span class="menu"> </span>
 			<ul class="megamenu skyblue">
-				<li><a class="color1" href="index/"><s:message code="nav.home"/></a></li>
-				<li><a class="color7" href="brands/"><s:message code="nav.brand"/></a>
-				<div class="megapanel">
+				<li><a class="color1" href="index/"><s:message
+							code="nav.home" /></a></li>
+				<li><a class="color7" href="brands/"><s:message
+							code="nav.brand" /></a>
+					<div class="megapanel">
 						<div class="row">
 							<div class="col1">
 								<div class="h_nav">
@@ -79,42 +83,53 @@
 							<div class="col1"></div>
 						</div>
 					</div></li>
-				<li class="grid"><a class="color2" href="women/"><s:message code="nav.men"/></a></li>
-				<li><a class="color4" href="#"><s:message code="nav.women"/></a></li>
-				<li><a class="color5" href="#"><s:message code="nav.kid"/></a></li>
-				<li><a class="color6" href="#"><s:message code="nav.sport"/></a></li>
-				
-				
-				<li class="pull-right">
-					<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-						<s:message code="nav.account"/>
-					</a><%-- 
-					<ul class="dropdown-menu">
-						<li><a href=""><s:message code="nav.login"/></a></li>
-						<li><a href=""><s:message code="nav.forgot"/></a></li>
-						<li><a href=""><s:message code="nav.register"/></a></li>
-						<li><a href=""><s:message code="nav.logoff"/></a></li>
-						<li><a href=""><s:message code="nav.change"/></a></li>
-						<li><a href=""><s:message code="nav.edit"/></a></li>
-						<li class="divider"></li>
-						<li><a href=""><s:message code="nav.order"/></a></li>
-						<li><a href=""><s:message code="nav.item"/></a></li>
-					</ul> --%>	
-				</li>
-				
-				
+				<li class="grid"><a class="color2" href="category/men"><s:message
+							code="nav.men" /></a></li>
+				<li><a class="color4" href="#"><s:message code="nav.women" /></a></li>
+				<li><a class="color5" href="#"><s:message code="nav.kid" /></a></li>
+				<li><a class="color6" href="#"><s:message code="nav.sport" /></a></li>
 
+				<li class="login pull-right">
+					<div id="ss-login-container">
+						<a href="#" id="loginButton"><span><s:message code="header.login"/></span></a>
+						<div id="loginBox">
+							<form id="loginForm">
+								<fieldset id="body">
+									<fieldset>
+										<label for="email"><s:message code="header.email"/></label> 
+										<input type="text" name="email" id="email">
+									</fieldset>
+									<fieldset>
+										<label for="password"><s:message code="header.password"/></label> <input
+											type="password" name="password" id="password">
+									</fieldset>
+									<input type="submit" id="login" value="<s:message code="header.signin"/>"> <label
+										for="checkbox"><input type="checkbox" id="checkbox">
+										<i><s:message code="header.remember"/></i></label>
+								</fieldset>
+								<span><a href="#"><s:message code="header.forgot"/></a></span>
+							</form>
+						</div>
+					</div>
+				</li>				
 				<div class="clearfix"></div>
 			</ul>
 		</div>
 	</div>
 </div>
 <!-- script-for-nav -->
-	<script>
-		$("span.menu").click(function() {
-		  $( ".head-nav ul" ).slideToggle(300, function() {
+<script>
+$(function() {
+	$("span.menu").click(function() {
+		$(".head-nav ul").slideToggle(300, function() {
 			// Animation complete.
-		  });
 		});
-	</script>
+	});
+	
+	$("#loginButton").click(function() {
+		alert("clicked !!!");
+		$("#loginBox").toggle();
+	});
+});
+</script>
 <!-- script-for-nav -->

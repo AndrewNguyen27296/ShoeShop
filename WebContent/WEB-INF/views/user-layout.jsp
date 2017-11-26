@@ -42,17 +42,24 @@
 
 			});
 		</script>
-
+		<style>
+			.ss-header-wrapper {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 5;
+			}
+		</style>
 </head>
-
-
 <body>
-	<!-- Header -->
-	<jsp:include page="user/layout/header.jsp" />
-
-	<!-- Header Navigator -->
-	<jsp:include page="user/layout/navigator.jsp" />
-
+	<div class="ss-header-wrapper">
+		<!-- Header -->
+		<jsp:include page="user/layout/header.jsp" />
+		<!-- Header Navigator -->
+		<jsp:include page="user/layout/navigator.jsp" />
+	</div>
+	
 	<!-- Banner Ads -->
 	<jsp:include page="user/layout/banner.jsp" />
 

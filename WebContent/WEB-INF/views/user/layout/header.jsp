@@ -1,7 +1,11 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 
-<div class="header">
+<div class="header" style="position: absolute;
+    top: 0;
+    width: 100%;
+    background: #fefefe;">
 	<div class="top_bg">
 		<div class="container">
 			<div class="header_top">
@@ -10,9 +14,30 @@
 				</div>
 				<div class="top_right">
 					<ul>
-						<li><a href="registration/"><s:message code="header.create"/> </a></li>
+						
+						<li style="margin-top: -30px;">
+							<c:set var="cart" value="${sessionScope['scopedTarget.cart']}" />
 
-						<li class="login">
+								<div class="nn-cart" style="width: 300px;">
+									<div class="panel panel-default">
+										<div class="panel-body" style="width: 400px; height: 30px; padding:0px;">
+											<img class="col-sm-5 nn-cart-img" src="assets/images/shoppingcart.gif" style="width: 50px;height: 30px;"/>
+											<ul class="col-sm-7" style="margin-top: 5px;">
+												<li><span id="count">${cart.count}</span> <s:message code="g.cart.item" />
+												</li>
+												<li>$ <span id="amount">${cart.amount}</span></li>
+												<li><a href="shopping-cart/view.php"><s:message code="g.cart.view" />
+												</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+						</li>
+						
+						<%-- <li><a href="registration/"><s:message code="header.create"/> </a></li> --%>
+
+						<%-- <li class="login">
 							<div id="loginContainer">
 								<a href="#" id="loginButton"><span><s:message code="header.login"/></span></a>
 								<div id="loginBox">
@@ -34,10 +59,10 @@
 									</form>
 								</div>
 							</div>
-						</li>
+						</li> --%>
 					</ul>
 
-					<div class="language" style="margin-top: 1em;">
+					<div class="language pull-right" style="margin-top: 0px;">
 						<ul style="">
 							<li><img src="assets/images/flags/if_flag-usa_748050.png" />
 							</li>
