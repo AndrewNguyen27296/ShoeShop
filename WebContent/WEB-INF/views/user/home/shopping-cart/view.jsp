@@ -4,17 +4,26 @@
 	.main {
     	padding: 1em 0em;
 	}
+	.shoping_left {
+	    float: left;
+	    width: 30%;
+	    margin-right: 3%;
+	}
 	.shoping_right {
 	    float: right;
-	    width: 25%;
+	    width: 60%;
+	}
+	.shoping_right p.tot {
+	    font-size: 1.3em;
+	    float: right;
 	}
 	.shoping_right p span {
     	color: #ff0000;
-    	float: none;
+    	float: right;
     	margin-left: 10px;
 	}
 </style>
-<div class="main">
+<div class="main col-md-9">
 	<div class="shoping_bag">
 		<h4><img src="assets/images/small.jpg"><s:message code="checkout.title"/> / <span> 11 <s:message code="checkout.unit"/></span></h4>
 		<div class="clearfix"></div>

@@ -30,6 +30,7 @@
 				<value>classpath:instock</value>
 				<value>classpath:sidebar</value>
 				<value>classpath:checkout</value>
+				<value>classpath:cart</value>
 			</list>
 		</property>
 	</bean>

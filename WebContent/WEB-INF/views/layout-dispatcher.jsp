@@ -2,11 +2,11 @@
 
 <%
 	String view = request.getParameter("view");
-	if(view.startsWith("user/home/")) {
-		pageContext.include("user-layout.jsp");
+	if(view.startsWith("user/landing/")) {
+		pageContext.include("user-landing-layout.jsp");
 	}
-	else if(view.startsWith("user/checkout/")) {
-		pageContext.include("user-checkout-layout.jsp");
+	else if(view.startsWith("user/home/")) {
+		pageContext.include("user-home-layout.jsp");
 	}
 	else if(view.startsWith("admin/landing/")) {
 		pageContext.include("admin-landing-layout.jsp");

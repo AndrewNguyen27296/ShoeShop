@@ -1,5 +1,6 @@
 package shoeshop.services;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.Hibernate;
@@ -85,5 +86,79 @@ public class ProductService {
 		});
 		return list;
 	}
-
+	
+	public List<Product> listSpecial() {
+		String hql = "FROM Product WHERE special = true ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		return list;
+	}
+	
+	public List<Product> listLastest() {
+		String hql = "FROM Product WHERE status = true ORDER BY createDate DESC";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setMaxResults(6);
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		
+		Collections.shuffle(list);
+		return list;
+	}
+	
+	public List<Product> listRand() {
+		String hql = "FROM Product WHERE status = true ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setMaxResults(12);
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		
+		Collections.shuffle(list);
+		return list;
+	}
+	
+	public List<Product> listRand2() {
+		String hql = "FROM Product WHERE status = true ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setMaxResults(12);
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		
+		Collections.shuffle(list);
+		return list;
+	}
+	
+	/*
+	 *	List Product co CategoryId = 1 (Men's) 
+	 * */
+	public List<Product> listMenProduct() {
+		String hql = "FROM Product WHERE categoryId = 1 ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		return list;
+	}
+	
+	
+	
 }

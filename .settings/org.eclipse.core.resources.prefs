@@ -1,7 +1,11 @@
 eclipse.preferences.version=1
 encoding//res/banner_vi.properties=UTF-8
+<<<<<<< HEAD
 encoding//res/checkout.properties=UTF-8
 encoding//res/checkout_vi.properties=UTF-8
+=======
+encoding//res/cart_vi.properties=UTF-8
+>>>>>>> refs/remotes/origin/feature/xinkachu
 encoding//res/footer_vi.properties=UTF-8
 encoding//res/global_vi.properties=UTF-8
 encoding//res/header_vi.properties=UTF-8

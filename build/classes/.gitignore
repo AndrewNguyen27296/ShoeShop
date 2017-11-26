@@ -13,5 +13,10 @@
 /shoeshop/
 /sidebar.properties
 /sidebar_vi.properties
+<<<<<<< HEAD
 /checkout.properties
 /checkout_vi.properties
+=======
+/cart.properties
+/cart_vi.properties
+>>>>>>> refs/remotes/origin/feature/xinkachu

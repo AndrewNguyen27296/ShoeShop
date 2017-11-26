@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 
 <div class="banner">
-	<div class="container">
+	<div class="container" style="margin-top: 110px;">
 		<div class="col-md-6"></div>
 		<div class="col-md-6 banner-info">
 			<h1><s:message code="global.title"/></h1> 
