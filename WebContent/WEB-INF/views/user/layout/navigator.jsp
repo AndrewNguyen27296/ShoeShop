@@ -1,9 +1,11 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <style>
+	.head-bann {
+		margin-top: 90px; position: absolute; top: 0; width: 100%;
+	}
 </style>
-<div class="head-bann"
-	style="margin-top: 90px; position: absolute; top: 0; width: 100%;">
+<div class="head-bann">
 	<div class="container">
 		<div class="head-nav">
 			<span class="menu"> </span>
@@ -91,7 +93,7 @@
 
 				<li class="login pull-right">
 					<div id="ss-login-container">
-						<a href="#" id="loginButton"><span><s:message code="header.login"/></span></a>
+						<a id="loginButton"><span><s:message code="header.login"/></span></a>
 						<div id="loginBox">
 							<form id="loginForm">
 								<fieldset id="body">
@@ -119,17 +121,14 @@
 </div>
 <!-- script-for-nav -->
 <script>
-$(function() {
 	$("span.menu").click(function() {
 		$(".head-nav ul").slideToggle(300, function() {
 			// Animation complete.
 		});
 	});
 	
-	$("#loginButton").click(function() {
-		alert("clicked !!!");
+	$("#ss-login-container").click(function() {
 		$("#loginBox").toggle();
 	});
-});
 </script>
 <!-- script-for-nav -->

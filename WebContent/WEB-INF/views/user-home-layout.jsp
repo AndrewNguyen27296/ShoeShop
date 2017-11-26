@@ -44,13 +44,13 @@
 		<jsp:include page="user/layout/navigator.jsp" />
 	</div>
 
-	<div class="featured">
+	<div class="featured" style="margin-top: 180px;">
 		<div class="container">
 			<!-- Body Contents -->
 			<jsp:include page="${param.view}" />
 
 			<!-- Sidebar -->
-			<jsp:include page="user/layout/sidebar.jsp" />
+			<jsp:include page="user/layout/sidebar.jsp"/>
 		</div>
 	</div>
 

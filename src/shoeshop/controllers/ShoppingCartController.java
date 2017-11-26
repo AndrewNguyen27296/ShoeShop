@@ -10,13 +10,13 @@ public class ShoppingCartController {
 	@RequestMapping("view")
 	public String index() {
 		
-		return "user/shopping-cart/view";
+		return "user/home/shopping-cart/view";
 	}
 	
 	@RequestMapping("checkout")
 	public String checkout() {
 		
-		return "user/shopping-cart/view";
+		return "user/home/shopping-cart/view";
 	}
 	
 }
