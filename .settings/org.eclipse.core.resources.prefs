@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//res/banner_vi.properties=UTF-8
+encoding//res/checkout.properties=UTF-8
+encoding//res/checkout_vi.properties=UTF-8
 encoding//res/footer_vi.properties=UTF-8
 encoding//res/global_vi.properties=UTF-8
 encoding//res/header_vi.properties=UTF-8
@@ -7,3 +9,4 @@ encoding//res/instock_vi.properties=UTF-8
 encoding//res/navigator_vi.properties=UTF-8
 encoding//res/sidebar_vi.properties=UTF-8
 encoding/<project>=UTF-8
+encoding/res=UTF-8

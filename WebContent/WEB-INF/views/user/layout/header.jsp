@@ -41,11 +41,11 @@
 						<ul style="">
 							<li><img src="assets/images/flags/if_flag-usa_748050.png" />
 							</li>
-							<li><a href="index/?lang=en" style="font-size: xx-small;">English
+							<li><a href="?lang=en" style="font-size: xx-small;">English
 									||</a></li>
 							<li><img
 								src="assets/images/flags/if_flag-vietnam_748133.png" /></li>
-							<li><a href="index/?lang=vi" style="font-size: xx-small;">Tiếng
+							<li><a href="?lang=vi" style="font-size: xx-small;">Tiếng
 									Việt</a></li>
 						</ul>
 					</div>

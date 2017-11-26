@@ -29,6 +29,7 @@
 				<value>classpath:navigator</value>
 				<value>classpath:instock</value>
 				<value>classpath:sidebar</value>
+				<value>classpath:checkout</value>
 			</list>
 		</property>
 	</bean>
