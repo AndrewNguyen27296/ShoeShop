@@ -1,0 +1,35 @@
+.kj-input:focus {
+	border-color: #F54D4D;
+}
+
+.kj-input:hover:focus {
+	border-color: #F54D4D;
+}
+
+.login-form .footer-links a.kj-link {
+	color: #D1D1D1;
+}
+
+.login-form .footer-links a.kj-link:hover {
+	color: #3D0303;
+}
+
+.checkbox-primary input[type="checkbox"]:checked+label::before {
+	background-color: #F54D4D;
+	border-color: #F54D4D;
+}
+.kj-button{
+	background-color: #F54D4D;
+}
+
+.kj-button:focus {
+	background-color: #F54D4D; 
+}
+
+.kj-button:hover{
+	background-color: #FF6161; 
+}
+
+.kj-icon:before {
+    color: #F54D4D; 
+}
