@@ -2,9 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
 
-<!-- ================================================
-Data Tables
-================================================ -->
+<script src="assets/admin/template/js/jquery.min.js"></script>
 <script src="assets/admin/template/js/datatables/datatables.min.js"></script>
 <script>
 	$(function() {

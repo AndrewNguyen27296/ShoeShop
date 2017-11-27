@@ -32,10 +32,16 @@
 				<span class="icon color5"><i class="fa fa-home"></i></span> Materials
 			</a>
 		</li>
-		<li>
-			<a href="admin/dashboard/analysis/">
-				<span class="icon color5"><i class="fa fa-home"></i></span> Analysis Statistic
-			</a>
+		<li><a href="javascript:void(0)"><span class="icon color7"><i class="fa fa-bar-chart"></i></span>Revenues Statistic<span class="caret"></span></a>
+		    <ul>
+		      <li><a href="admin/dashboard/revenue/by/product/">By Products</a></li>
+		      <li><a href="admin/dashboard/revenue/by/category/">By Categories</a></li>		      
+		      <li><a href="admin/dashboard/revenue/by/brand/">By Brands</a></li>
+		      <li><a href="admin/dashboard/revenue/by/customer/">By Customers</a></li>
+		      <li><a href="admin/dashboard/revenue/by/month/">By Month</a></li>
+		      <li><a href="admin/dashboard/revenue/by/year/">By Year</a></li>
+		      <li><a href="admin/dashboard/revenue/by/quarter/">By Quarter</a></li>
+		    </ul>
 		</li>
 	</ul>
 </div>
