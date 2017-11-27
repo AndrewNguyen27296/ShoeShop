@@ -20,7 +20,7 @@
 			p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 			p:url="jdbc:sqlserver://localhost; Database=ShoeShop"
 			p:username="sa"
-			p:password="Throne97310">
+			p:password="admin">
 			
 	</bean>
 	
