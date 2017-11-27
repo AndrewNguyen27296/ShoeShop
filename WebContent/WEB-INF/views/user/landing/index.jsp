@@ -3,9 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
 
-
 <div class="col-md-9">
-
 	<!-- 6 Latest Product / shuffle  -->
 	<div class="biseller-info">
 		<h4 class="new-models" style="font-size: 2em;">

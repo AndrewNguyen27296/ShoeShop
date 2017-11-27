@@ -14,8 +14,8 @@
 
 	<!-- Configures Handler Interceptors -->
 	<mvc:interceptors>
-		<!-- Lọc tất cả các URL <bean class="nhatnghe.interceptor.MyInterceptor" 
-			/> -->
+		<!-- Lọc tất cả các URL -->
+		<bean class="shoeshop.interceptors.ProductInterceptor"/>
 
 		<!-- Chỉ lọc các URL theo path -->
 		<mvc:interceptor>

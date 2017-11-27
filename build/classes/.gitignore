@@ -1,5 +1,9 @@
 /banner.properties
 /banner_vi.properties
+/cart.properties
+/cart_vi.properties
+/checkout.properties
+/checkout_vi.properties
 /footer.properties
 /footer_vi.properties
 /global.properties
@@ -13,5 +17,3 @@
 /shoeshop/
 /sidebar.properties
 /sidebar_vi.properties
-/cart.properties
-/cart_vi.properties

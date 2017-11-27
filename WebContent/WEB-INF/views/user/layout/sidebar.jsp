@@ -9,42 +9,12 @@
 			<h3 class="m_2" style="font-family:arial; font-weight: 500;"><s:message code="sidebar.categories"/></h3>
 			<div class="list-group">
   				<a href="category/men/" class="list-group-item list-group-item-success"><s:message code="nav.men"/></a>
-  				<a href="#" class="list-group-item list-group-item-info"><s:message code="nav.women"/></a>
-  				<a href="#" class="list-group-item list-group-item-warning"><s:message code="nav.kid"/></a>
-  				<a href="#" class="list-group-item list-group-item-danger"><s:message code="nav.sport"/></a>
+  				<a href="category/women/" class="list-group-item list-group-item-info"><s:message code="nav.women"/></a>
+  				<a href="category/kid/" class="list-group-item list-group-item-warning"><s:message code="nav.kid"/></a>
+  				<a href="category/sport/" class="list-group-item list-group-item-danger"><s:message code="nav.sport"/></a>
 			</div>
 		</div>
-
 	</section>
-
-	
-	<!-- <div class="sellers">
-		<h3 class="m_2">Tags</h3>
-		<div class="tags">
-			<ul>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-				<li><a href="#">Tag,</a></li>
-			</ul>
-		</div>
-	</div> -->
 
 	<section class="sky-form">
 		<div class="sellers">

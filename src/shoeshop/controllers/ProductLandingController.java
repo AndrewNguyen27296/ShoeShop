@@ -13,25 +13,14 @@ import shoeshop.entities.Product;
 import shoeshop.services.ProductService;
 
 @Controller
-public class HomeController {
+public class ProductLandingController {
 	
 	@Autowired
 	ProductService productService;
 	
 	@RequestMapping(value= {"","index"})
 	public String index() {
-		return "user/home/index";
-	}	
-	
-	@RequestMapping("category/men")
-	public String categoryMen() {
-		return "product/product-men";
-	}	
-	
-	@RequestMapping("detail/{id}")
-	public String detail(Model model, @PathVariable("id") String id) {
-		model.addAttribute("prod", productService.get(id));
-		return "user/landing/product/detail";
+		return "user/landing/index";
 	}	
 	
 	@ModelAttribute("latests")
@@ -47,15 +36,5 @@ public class HomeController {
 	@ModelAttribute("random2")
 	public List<Product> getListRand2() {
 		return productService.listRand2();
-	}
-	
-	@ModelAttribute("special")
-	public List<Product> getSpecial() {
-		return productService.listSpecial();
-	}
-	
-	@ModelAttribute("menProds")
-	public List<Product> getMenProduct() {
-		return productService.listMenProduct();
 	}
 }

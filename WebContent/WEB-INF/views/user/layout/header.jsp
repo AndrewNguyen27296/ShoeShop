@@ -10,11 +10,10 @@
 		<div class="container">
 			<div class="header_top">
 				<div class="logo">
-					<a href="/"><img src="assets/images/logo.png" alt="" /></a>
+					<a href=""><img src="assets/images/logo.png" alt="" /></a>
 				</div>
 				<div class="top_right">
-					<ul>
-						
+					<ul>						
 						<li style="margin-top: -30px;">
 							<c:set var="cart" value="${sessionScope['scopedTarget.cart']}" />
 
@@ -26,7 +25,7 @@
 												<li><span id="count">${cart.count}</span> <s:message code="g.cart.item" />
 												</li>
 												<li>$ <span id="amount">${cart.amount}</span></li>
-												<li><a href="shopping-cart/view.php"><s:message code="g.cart.view" />
+												<li><a href="shopping-cart/view/"><s:message code="g.cart.view" />
 												</a>
 												</li>
 											</ul>
@@ -66,11 +65,11 @@
 						<ul style="">
 							<li><img src="assets/images/flags/if_flag-usa_748050.png" />
 							</li>
-							<li><a href="index/?lang=en" style="font-size: xx-small;">English
+							<li><a href="?lang=en" style="font-size: xx-small;">English
 									||</a></li>
 							<li><img
 								src="assets/images/flags/if_flag-vietnam_748133.png" /></li>
-							<li><a href="index/?lang=vi" style="font-size: xx-small;">Tiếng
+							<li><a href="?lang=vi" style="font-size: xx-small;">Tiếng
 									Việt</a></li>
 						</ul>
 					</div>

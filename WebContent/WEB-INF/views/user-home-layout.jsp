@@ -26,31 +26,15 @@
 <link rel="stylesheet" href="assets/css/footer-distributed-with-address-and-phones.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-<script>
-			jQuery(document).ready(function($){
-
-				$('#etalage').etalage({
-					thumb_image_width: 300,
-					thumb_image_height: 400,
-					source_image_width: 800,
-					source_image_height: 1000,
-					show_hint: true,
-					click_callback: function(image_anchor, instance_id){
-						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-					}
-				});
-
-			});
-		</script>
-		<style>
-			.ss-header-wrapper {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 5;
-			}
-		</style>
+<style>
+	.ss-header-wrapper {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 5;
+	}
+</style>
 </head>
 <body>
 	<div class="ss-header-wrapper">
@@ -59,14 +43,14 @@
 		<!-- Header Navigator -->
 		<jsp:include page="user/layout/navigator.jsp" />
 	</div>
-	
 
-
-	<div class="featured">
+	<div class="featured" style="margin-top: 180px;">
 		<div class="container">
 			<!-- Body Contents -->
 			<jsp:include page="${param.view}" />
 
+			<!-- Sidebar -->
+			<jsp:include page="user/layout/sidebar.jsp"/>
 		</div>
 	</div>
 

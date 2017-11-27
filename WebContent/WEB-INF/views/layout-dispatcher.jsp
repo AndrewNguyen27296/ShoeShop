@@ -2,17 +2,17 @@
 
 <%
 	String view = request.getParameter("view");
-	if(view.startsWith("user/")) {
-		pageContext.include("user-layout.jsp");
+	if(view.startsWith("user/landing/")) {
+		pageContext.include("user-landing-layout.jsp");
+	}
+	else if(view.startsWith("user/home/")) {
+		pageContext.include("user-home-layout.jsp");
 	}
 	else if(view.startsWith("admin/landing/")) {
 		pageContext.include("admin-landing-layout.jsp");
 	}
 	else if(view.startsWith("admin/dashboard/")) {
 		pageContext.include("admin-dashboard-layout.jsp");
-	}
-	else if(view.startsWith("product/")) {
-		pageContext.include("product-layout.jsp");
 	}
 	else {
 		pageContext.include("blank-layout.jsp");
