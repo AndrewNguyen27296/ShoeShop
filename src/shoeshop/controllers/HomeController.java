@@ -25,7 +25,7 @@ public class HomeController {
 	
 	@RequestMapping("category/men")
 	public String categoryMen() {
-		return "user/landing/product/product-men";
+		return "product/product-men";
 	}	
 	
 	@RequestMapping("detail/{id}")

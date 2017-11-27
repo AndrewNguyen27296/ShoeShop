@@ -1,4 +1,7 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,160 +48,17 @@
 		</script>
 
 </head>
-<body>
-	<!-- content -->
+
+<!-- content -->
 <div class="container">
 <div class="women_main">
-<div class="col-md-3 span_1_of_right1">
-				  <section  class="sky-form">
-				   <div class="product_right">
-     			<h3 class="m_2">Categories</h3>
-     			    <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
-            			<option value="0">Men's</option>	
-						<option value="1">Tempor</option>
-						<option value="2">Congue</option>
-						<option value="3">Mazim </option>
-						<option value="4">Mutationem</option>
-						<option value="5">Hendrerit </option>
-		           </select>
-				   <label class="me"></label>
-				   <select class="dropdown" tabindex="50" data-settings='{"wrapperClass":"metro"}'>
-						<option value="1">Women's</option>
-						<option value="2">Sub Category1</option>
-						<option value="3">Sub Category2</option>
-						<option value="4">Sub Category3</option>
-			       </select>
-				    <label class="wom"></label>
-				   <select class="dropdown" tabindex="8" data-settings='{"wrapperClass":"metro"}'>
-						<option value="1">Kids</option>
-						<option value="2">Sub Category1</option>
-						<option value="3">Sub Category2</option>
-						<option value="4">Sub Category3</option>
-			       </select>
-				    <label class="kid"></label>
-			       <select class="dropdown" tabindex="8" data-settings='{"wrapperClass":"metro"}'>
-						<option value="1">Sports</option>
-						<option value="2">Sub Category1</option>
-						<option value="3">Sub Category2</option>
-						<option value="4">Sub Category3</option>
-			       </select>
-				    <label class="spo"></label>
-</div>
-						
-				</section>
-                   	 
-						<div class="sellers">
-							<h3 class="m_2">Best sellers</h3>
-								<div class="best">
-									<div class="icon">
-										<img src="images/sh.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="data">
-										<h4><a href="#">Sample Item Title Goes Here</a></h4>
-										<p>$120.00</p>
-										<h5>$120.00</h5>
-									</div>
-									<div class="clearfix"></div>
-								</div>	
-								<div class="best">
-									<div class="icon">
-										<img src="images/sh.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="data">
-									<h4><a href="#">Sample Item Title Goes Here</a></h4>
-										<p>$120.00</p>
-										<h5>$120.00</h5>
-									</div>
-									<div class="clearfix"></div>
-								</div>	
-								<div class="best">
-									<div class="icon">
-										<img src="images/sh.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="data">
-										<h4><a href="#">Sample Item Title Goes Here</a></h4>
-										<p>$120.00</p>
-										<h5>$120.00</h5>
-									</div>
-									<div class="clearfix"></div>
-								</div>	
-						 </div>
-					 
-		       <section  class="sky-form">
-					<div class="sellers">
-							<h3 class="m_2">Special Offers</h3>
-							<section class="slider">
-						<div class="flexslider">
-							<ul class="slides">
-								<li>
-									<div class="tittle">
-										<img src="images/shoe.jpg" class="img-responsive" alt=""/>
-										<h6>Item Title Here</h6>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<a class="show1" href="#">SHOW ME MORE</a>
-									</div>
-								</li>
-								<li>
-									<div class="tittle">
-										<img src="images/shoe.jpg" class="img-responsive" alt=""/>
-										<h6>Item Title Here</h6>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<a class="show1" href="#">SHOW ME MORE</a>
-									</div>
-								</li>
-								<li>	
-									<div class="tittle">
-										<img src="images/shoe.jpg" class="img-responsive" alt=""/>
-										<h6>Item Title Here</h6>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<a class="show1" href="#">SHOW ME MORE</a>
-									</div>
-								</li>
-								<li>	
-									<div class="tittle">
-										<img src="images/shoe.jpg" class="img-responsive" alt=""/>
-										<h6>Item Title Here</h6>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<p>Lorem ipsum dolor sit amet,</p>
-										<a class="show1" href="#">SHOW ME MORE</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</section>
-				
-						<!-- FlexSlider -->
-							  <script defer src="js/jquery.flexslider.js"></script>
-							  <script type="text/javascript">
-								$(function(){
-								  SyntaxHighlighter.all();
-								});
-								$(window).load(function(){
-								  $('.flexslider').flexslider({
-									animation: "slide",
-									start: function(slider){
-									  $('body').removeClass('loading');
-									}
-								  });
-								});
-							  </script>
-						<!-- FlexSlider -->
 
-						</div>
-		       </section>
 		       
 
 	  </div>
 <div class="col-md-9 w_content">
 		<div class="women">
-			<a href="#"><h4>Enthecwear - <span>4449 itemms</span> </h4></a>
+			<a href="#"><h4>Runner's Sport - <span>4449 items</span> </h4></a>
 			<ul class="w_nav">
 						<li>Sort : </li>
 		     			<li><a class="active" href="#">popular</a></li> |
@@ -212,7 +72,7 @@
 		<!-- grids_of_4 -->
 		<div class="grids_of_4">
 		  <div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
+				<div class="content_box"><a href="">
 			   	  <div class="view view-fifth">
 			   	   	 <img src="images/5.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="mask">
@@ -223,6 +83,7 @@
 				    <h4><a href="details.html"> Duis autem</a></h4>
 				     <p>It is a long established fact that a reader</p>
 				     <span>$99.99</span>
+			   	</div>
 			   	</div>
 			</div>
 			<div class="grid1_of_4">
@@ -340,14 +201,14 @@
 				     <p>It is a long established fact that a reader</p>
 				     <span>$99.99</span>
 			   	</div>
-			</div>
+
 			
 			<div class="clearfix"></div>
-		</div>
+
 		<!-- end grids_of_4 -->
-	</div>
+	
 				<div class="clearfix"></div>	
-	</div>		
+		
 </div>		
 <!-- content -->
 </body>
