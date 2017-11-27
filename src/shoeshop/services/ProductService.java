@@ -72,6 +72,14 @@ public class ProductService {
 		Product product = (Product) session.get(Product.class, id);
 		Hibernate.initialize(product.getProductImages());
 		Hibernate.initialize(product.getProductSizes());
+		Hibernate.initialize(product.getBrand().getProducts());
+		product.getBrand().getProducts().forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+		});		
+		Hibernate.initialize(product.getCategory().getProducts());
+		product.getCategory().getProducts().forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+		});
 		return product;
 	}
 
@@ -91,6 +99,7 @@ public class ProductService {
 		String hql = "FROM Product WHERE special = true ORDER BY RAND()";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
+		query.setMaxResults(5);
 		List<Product> list = query.list();
 		list.forEach(p -> {
 			Hibernate.initialize(p.getProductImages());
@@ -148,9 +157,62 @@ public class ProductService {
 	 *	List Product co CategoryId = 1 (Men's) 
 	 * */
 	public List<Product> listMenProduct() {
-		String hql = "FROM Product WHERE categoryId = 1 ORDER BY RAND()";
+		String hql = "FROM Product WHERE category.name = :cate ORDER BY RAND()";
 		Session session = factory.getCurrentSession();
 		Query query = session.createQuery(hql);
+		query.setParameter("cate", "Men's");
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		return list;
+	}
+
+	public List<Product> listWomenProduct() {
+		String hql = "FROM Product WHERE category.name = :cate ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setParameter("cate", "Women's");
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		return list;
+	}
+	
+	public List<Product> listKidProduct() {
+		String hql = "FROM Product WHERE category.name = :cate ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setParameter("cate", "Kid's");
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		return list;
+	}
+	
+	public List<Product> listSportProduct() {
+		String hql = "FROM Product WHERE category.name = :cate ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setParameter("cate", "Sport's");
+		List<Product> list = query.list();
+		list.forEach(p -> {
+			Hibernate.initialize(p.getProductImages());
+			Hibernate.initialize(p.getProductSizes());
+		});
+		return list;
+	}
+
+	public List<Product> listByBrand(int id) {
+		String hql = "FROM Product WHERE brand.id = :brandId ORDER BY RAND()";
+		Session session = factory.getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setParameter("brandId", id);
 		List<Product> list = query.list();
 		list.forEach(p -> {
 			Hibernate.initialize(p.getProductImages());

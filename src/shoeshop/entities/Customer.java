@@ -14,9 +14,7 @@ import javax.persistence.Table;
 @Table(name="Customers")
 public class Customer {
 	@Id
-	@GeneratedValue
-	Integer id;
-	
+	String id;	
 	String password;
 	String fullName;
 	String email;
@@ -30,12 +28,12 @@ public class Customer {
 	Collection<Order> orders;
 
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

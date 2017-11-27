@@ -1,6 +1,13 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
 <!-- etale -->
 <link rel="stylesheet" href="assets/css/etalage.css">
+<style id="nn-cart-fly">
+	
+</style>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/shopping-cart.js"></script>
 <script src="assets/js/jquery.etalage.min.js"></script>
 <script>
 	jQuery(document).ready(function($){
@@ -22,125 +29,74 @@
 <div class="col-md-9">
 	<div class="single_left">		 
 		<div class="grid images_3_of_2">
-			<ul id="etalage">
-				<li>
-					<a href="optionallink.html">
-						<img class="etalage_thumb_image" src="assets/images/d1.jpg" class="img-responsive" />
-						<img class="etalage_source_image" src="assets/images/d1.jpg" class="img-responsive" title="" />
-					</a>
-				</li>
-				<li>
-					<img class="etalage_thumb_image" src="assets/images/d2.jpg" class="img-responsive" />
-					<img class="etalage_source_image" src="assets/images/d2.jpg" class="img-responsive" title="" />
-				</li>
-				<li>
-					<img class="etalage_thumb_image" src="assets/images/d3.jpg" class="img-responsive"  />
-					<img class="etalage_source_image" src="assets/images/d3.jpg"class="img-responsive"  />
-				</li>
-			    <li>
-					<img class="etalage_thumb_image" src="assets/images/d4.jpg" class="img-responsive"  />
-					<img class="etalage_source_image" src="assets/images/d4.jpg"class="img-responsive"  />
-				</li>
+			<ul id="etalage" style="height: 460px;">
+				<c:forEach items="${prod.productImages}" var="p">
+					<li>
+						<img class="etalage_thumb_image" src="assets/upload/products/files/${p.image}" class="img-responsive" width="100%" height="60%" />
+						<img class="etalage_source_image" src="assets/upload/products/files/${p.image}" class="img-responsive" width="100%" height="60%" />
+					</li>
+				</c:forEach>
 			</ul>
 			<div class="clearfix"></div>	
 	 	</div>
 		<div class="desc1 span_3_of_2">
-			<h3>soluta nobis eleifend option</h3>
-			<p>
-				Rs. 999 <a href="#">click for offer</a>
-			</p>
+			<h3>${prod.name}</h3>
+			<p><fmt:formatNumber value="${prod.price}" pattern="###,###"/> Đ</p>
 			<div class="det_nav">
-				<h4>related styles :</h4>
+				<h4>Related styles :</h4>
 				<ul>
-					<li><a href="#"><img src="assets/images/1.jpg"
-							class="img-responsive" alt="" /></a></li>
-					<li><a href="#"><img src="assets/images/12.jpg"
-							class="img-responsive" alt="" /></a></li>
-					<li><a href="#"><img src="assets/images/3.jpg"
-							class="img-responsive" alt="" /></a></li>
-					<li><a href="#"><img src="assets/images/ss2.jpg"
-							class="img-responsive" alt="" /></a></li>
+					<c:forEach items="${prod.brand.products}" var="p">
+						<li><a href="detail/${p.id}/"><img src="assets/upload/products/files/${p.productImages[0].image}" class="img-responsive" alt=""/></a></li>
+					</c:forEach>
 				</ul>
 			</div>
 			<div class="det_nav1">
 				<h4>Select a size :</h4>
 				<div class=" sky-form col col-4">
 					<ul>
-						<li><label class="checkbox"><input type="checkbox"
-								name="checkbox"><i></i>L</label></li>
-						<li><label class="checkbox"><input type="checkbox"
-								name="checkbox"><i></i>S</label></li>
-						<li><label class="checkbox"><input type="checkbox"
-								name="checkbox"><i></i>M</label></li>
-						<li><label class="checkbox"><input type="checkbox"
-								name="checkbox"><i></i>XL</label></li>
+						<c:forEach items="${prod.productSizes}" var="s">
+							<li>
+								<label>
+									<input type="radio" name="size" value="${s.id}">
+									<i></i> ${s.size.sizeUS}
+								</label>
+							</li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
 			<div class="btn_form">
-				<a href="buy.html">buy</a>
+				<a id="btn-add-cart">Buy</a>
 			</div>
-			<a href="#"><span>login to save in wishlist </span></a>
 		</div>
 		<div class="clearfix"></div>
     </div>
     <div class="single-bottom1">
 		<h6>Details</h6>
-		<p class="prod-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
+		<p class="prod-desc">${prod.description}</p>
 	</div>
 	<div class="single-bottom2">
 		<h6>Related Products</h6>
+		<c:forEach items="${prod.category.products}" var="p">
 			<div class="product">
-			   <div class="product-desc">
+				<div class="product-desc">
 					<div class="product-img">
-                          <img src="assets/images/12.jpg" class="img-responsive " alt=""/>
-                      </div>
-                      <div class="prod1-desc">
-                          <h5><a class="product_link" href="#">Excepteur sint</a></h5>
-                          <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
-				   </div>
-				  <div class="clearfix"></div>
-		      </div>
-			  <div class="product_price">
-					<span class="price-access">$597.51</span>								
-					<button class="button1"><span>Add to cart</span></button>
-                 </div>
-			 <div class="clearfix"></div>
-	     </div>
-		  <div class="product">
-			   <div class="product-desc">
-					<div class="product-img">
-                          <img src="assets/images/9.jpg" class="img-responsive " alt=""/>
-                      </div>
-                      <div class="prod1-desc">
-                          <h5><a class="product_link" href="#">Excepteur sint</a></h5>
-                          <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
-				   </div>
+                         <a href="detail/${p.id}/"><img src="assets/upload/products/files/${p.productImages[0].image}" class="img-responsive " alt=""/></a>
+			        </div>
+	             	<div class="prod1-desc">
+                    	<h5><a class="product_link" href="detail/${p.id}/">${p.name}</a></h5>
+                    	<h5 class="price-access"><b><fmt:formatNumber value="${prod.price}" pattern="###,###"/> Đ</b></h5>	
+                    	<p class="product_descr">${p.description}</p>									
+				   	</div>
 				   <div class="clearfix"></div>
-		      </div>
-			  <div class="product_price">
-					<span class="price-access">$597.51</span>								
-					<button class="button1"><span>Add to cart</span></button>
-                 </div>
-			 <div class="clearfix"></div>
-	     </div>
-	     <div class="product">
-			   <div class="product-desc">
-					<div class="product-img">
-                          <img src="assets/images/8.jpg" class="img-responsive " alt=""/>
-                      </div>
-                      <div class="prod1-desc">
-                          <h5><a class="product_link" href="#">Excepteur sint</a></h5>
-                          <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
-				   </div>
-				   <div class="clearfix"></div>
-		      </div>
-			  <div class="product_price">
-					<span class="price-access">$597.51</span>								
-					<button class="button1"><span>Add to cart</span></button>
-                 </div>
-			 <div class="clearfix"></div>
-	     </div>
+				</div>
+				<div class="product_price" style="margin-top: 10px;">												
+					<a class="button1" href="detail/${p.id}/"><span>Detail</span></a>
+	            </div>
+				 <div class="clearfix"></div>
+			</div>
+		</c:forEach>		
+		 
 	</div>
 </div>	
 <!-- details -->

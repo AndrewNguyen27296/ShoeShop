@@ -56,9 +56,6 @@ public class Product {
 	Material material;
 	
 	@OneToMany(mappedBy="product")
-	Collection<OrderDetail> orderDetails;
-	
-	@OneToMany(mappedBy="product")
 	Collection<ProductImage> productImages;
 
 	@OneToMany(mappedBy="product")
@@ -166,14 +163,6 @@ public class Product {
 
 	public void setMaterial(Material material) {
 		this.material = material;
-	}
-
-	public Collection<OrderDetail> getOrderDetails() {
-		return orderDetails;
-	}
-
-	public void setOrderDetails(Collection<OrderDetail> orderDetails) {
-		this.orderDetails = orderDetails;
 	}
 
 	public Collection<ProductImage> getProductImages() {

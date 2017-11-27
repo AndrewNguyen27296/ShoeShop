@@ -15,7 +15,15 @@
 	<!-- Configures Handler Interceptors -->
 	<mvc:interceptors>
 		<!-- Lọc tất cả các URL -->
-		<bean class="shoeshop.interceptors.ProductInterceptor"/>
+		<bean class="shoeshop.interceptors.ShoeShopInterceptor"/>
+
+		<mvc:interceptor>		
+			<mvc:mapping path="/account/logout/"/>
+			<mvc:mapping path="/account/change/"/>
+			<mvc:mapping path="/account/edit/"/>
+			<mvc:mapping path="/order/**"/>
+			<bean class="shoeshop.interceptors.AuthenticateInterceptor" />			
+		</mvc:interceptor>	
 
 		<!-- Chỉ lọc các URL theo path -->
 		<mvc:interceptor>

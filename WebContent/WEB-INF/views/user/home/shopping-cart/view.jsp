@@ -1,5 +1,7 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
 <style>
 	.main {
     	padding: 1em 0em;
@@ -23,6 +25,7 @@
     	margin-left: 10px;
 	}
 </style>
+<script src="assets/js/shopping-cart.js"></script>
 <div class="main col-md-9">
 	<div class="shoping_bag">
 		<h4><img src="assets/images/small.jpg"><s:message code="checkout.title"/> / <span> 11 <s:message code="checkout.unit"/></span></h4>
@@ -41,30 +44,32 @@
 					<th>*</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<img src="assets/images/7.jpg"  class="img-responsive" alt="" width="90" height="65"/>
-					</td>
-					<td>
-						<div class="shoping1_of_2">
-							<h4><a href="#">men runnig shoe</a> </h4>
-							<div>
-								<h5><s:message code="checkout.table.code"/>: <b>SKU1175</b></h5>
-								<h5><s:message code="checkout.table.size"/>: <b>XL</b></h5>		
-							</div>		
-						</div>
-					</td>
-					<td>123153123</td>
-					<td>10%</td>
-					<td>123</td>
-					<td>19837219837219</td>
-					<td>
-						<ul class="s_icons">
-							<li><a href="#"><img src="assets/images/s_icon3.png" alt=""></a></li>
-						</ul>
-					</td>
-				</tr>
+			<tbody>		
+				<c:forEach items="${cart.items}" var="p">
+					<tr>
+						<td>
+							<img src="assets/upload/products/files/${p.product.productImages[0].image}"  class="img-responsive" alt="" width="90" height="65"/>
+						</td>
+						<td>
+							<div class="shoping1_of_2">
+								<h5><a href="#">${p.product.name}</a> </h5>
+								<div>
+									<h5><s:message code="checkout.table.code"/>: <b>SKU${p.product.id}</b></h5>
+									<h5><s:message code="checkout.table.size"/>: <b>${p.size.sizeUS}</b></h5>		
+								</div>		
+							</div>
+						</td>
+						<td><fmt:formatNumber value="${p.product.price}" pattern="###,###"/></td>
+						<td>${p.product.discount}%</td>
+						<td><input data-cart-update="${p.id}" value="${p.quantity}" type="number" min="1" max="20" style="width:50px;"></td>
+						<td class="amt"><fmt:formatNumber value="${p.quantity*p.product.price*(1-(p.product.discount/100))}" pattern="###,###"/> Đ</td>
+						<td>
+							<ul class="s_icons">
+								<li><a data-cart-remove="${p.id}"><img src="assets/images/s_icon3.png" alt=""></a></li>
+							</ul>
+						</td>
+					</tr>				
+				</c:forEach>
 			</tbody>
 		</table>
 		<div class="clearfix"></div>
@@ -72,10 +77,10 @@
 	<div class="shoping_bag2">
 		<div class="shoping_left">
 			<a class="btn1" href="" style="background-color: gray;"><s:message code="checkout.continue"/></a>
-			<a class="btn1" href="checkout/"><s:message code="checkout.checkout"/></a>
+			<a class="btn1" href="order/checkout/"><s:message code="checkout.checkout"/></a>
 		</div>
 		<div class="shoping_right">
-			<p class="tot"><s:message code="checkout.total"/><span class="color"> 6.000.000 VNĐ</span></p>
+			<p class="tot"><s:message code="checkout.total"/><span class="color"><fmt:formatNumber value="${cart.amount}" pattern="###,###"/> Đ</span></p>
 		</div>
 		<div class="clearfix"></div>
 	</div>

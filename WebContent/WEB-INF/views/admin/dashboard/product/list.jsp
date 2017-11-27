@@ -1,6 +1,16 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
+
+<!-- ================================================
+Data Tables
+================================================ -->
+<script src="assets/admin/template/js/datatables/datatables.min.js"></script>
+<script>
+	$(function() {
+		$('#ss-table').DataTable();
+	});
+</script>
 <!-- Start Page Header -->
 <div class="page-header">
 	<h1 class="title">Dashboard</h1>
@@ -40,7 +50,7 @@
 				</div>
 				<div class="panel-body table-responsive">
 
-					<table id="example0" class="table display">
+					<table id="ss-table" class="table display">
 						<thead>
 							<tr>
 								<th>#</th>

@@ -21,8 +21,7 @@
 							<h4>${l.name}</h4>
 							<p>
 								
-								<f:formatNumber value="${l.price}" maxFractionDigits="0"></f:formatNumber>
-								VNĐ
+								<f:formatNumber value="${l.price}" pattern="###,###"/> Đ
 							</p>
 						</div>
 					</div>
@@ -73,15 +72,16 @@
 				<c:forEach items="${random}" var="r">
 					<li>
 						<div class="biseller-column">
-							<img
-								src="assets/upload/products/files/${r.productImages[0].image}"
-								class="img-responsive" alt="" class="veiw-img"> <a
-								href="#"><i class="new"></i></a>
+							<a href="detail/${r.id}">
+								<img
+									src="assets/upload/products/files/${r.productImages[0].image}"
+									class="img-responsive" alt="" class="veiw-img"> <a
+									href="#"><i class="new"></i></a>
+							</a>
 							<div class="biseller-name">
 								<h4>${r.name}</h4>
 								<p>
-									<f:formatNumber value="${r.price}" maxFractionDigits="0"></f:formatNumber>
-									VNĐ
+									<f:formatNumber value="${r.price}" pattern="###,###"/> Đ
 								</p>
 							</div>
 
@@ -136,15 +136,16 @@
 				<c:forEach items="${random2}" var="r2">
 					<li>
 						<div class="biseller-column1">
-							<img
-								src="assets/upload/products/files/${r2.productImages[0].image}"
-								class="img-responsive" alt="" class="veiw-img"> <a
-								href="#"><i class="new"></i></a>
+							<a href="detail/${r2.id}">
+								<img
+									src="assets/upload/products/files/${r2.productImages[0].image}"
+									class="img-responsive" alt="" class="veiw-img"> 
+									<a><i class="new"></i></a>
+							</a>
 							<div class="biseller-name">
 								<h4>${r2.name}</h4>
 								<p>
-									<f:formatNumber value="${r2.price}" maxFractionDigits="0"></f:formatNumber>
-									VNĐ
+									<f:formatNumber value="${r2.price}" pattern="###,###"/> Đ
 								</p>
 							</div>
 						</div>

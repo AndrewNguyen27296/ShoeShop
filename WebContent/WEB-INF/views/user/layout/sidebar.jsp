@@ -25,7 +25,7 @@
 						<c:forEach items="${special}" var="spec">
 						<li>
 							<div class="tittle">
-								<img src="assets/upload/products/files/${spec.productImages[0].image}" class="img-responsive" alt="" />
+								<a href="detail/${spec.id}"><img src="assets/upload/products/files/${spec.productImages[0].image}" class="img-responsive" alt="" /></a>
 								<h6>${spec.name}</h6>
 								<p>
 								<f:formatNumber value="${spec.price}" maxFractionDigits="0"></f:formatNumber>

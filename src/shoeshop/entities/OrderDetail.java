@@ -13,9 +13,6 @@ public class OrderDetail {
 	@Id
 	@GeneratedValue
 	Integer id;
-	
-	Integer orderId;
-	String productId;
 	Double price;
 	Integer quantity;
 	Double discount;
@@ -28,8 +25,8 @@ public class OrderDetail {
 	Order order;
 	
 	@ManyToOne
-	@JoinColumn(name="ProductId")
-	Product product;
+	@JoinColumn(name="ProductSizeId")
+	ProductSize productSize;
 
 	public Integer getId() {
 		return id;
@@ -37,22 +34,6 @@ public class OrderDetail {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(Integer orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getProductId() {
-		return productId;
-	}
-
-	public void setProductId(String productId) {
-		this.productId = productId;
 	}
 
 	public Double getPrice() {
@@ -87,13 +68,15 @@ public class OrderDetail {
 		this.order = order;
 	}
 
-	public Product getProduct() {
-		return product;
+	public ProductSize getProductSize() {
+		return productSize;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setProductSize(ProductSize productSize) {
+		this.productSize = productSize;
 	}
+	
+	
 	
 	
 }

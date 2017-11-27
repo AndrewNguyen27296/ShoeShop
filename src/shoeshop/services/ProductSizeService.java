@@ -2,6 +2,7 @@ package shoeshop.services;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -66,9 +67,10 @@ public class ProductSizeService {
 		session.refresh(productSize);
 	}
 
-	public ProductSize get(String id) {
+	public ProductSize get(Integer id) {
 		Session session = factory.getCurrentSession();
 		ProductSize productSize = (ProductSize) session.get(ProductSize.class, id);
+		Hibernate.initialize(productSize.getProduct().getProductImages());
 		return productSize;
 	}
 

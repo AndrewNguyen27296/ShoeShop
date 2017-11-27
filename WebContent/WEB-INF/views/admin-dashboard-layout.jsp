@@ -110,11 +110,6 @@ Rickshaw
 <script src="assets/admin/template/js/rickshaw/rickshaw-plugin.js"></script>
 
 <!-- ================================================
-Data Tables
-================================================ -->
-<script src="assets/admin/template/js/datatables/datatables.min.js"></script>
-
-<!-- ================================================
 Sweet Alert
 ================================================ -->
 <script src="assets/admin/template/js/sweet-alert/sweet-alert.min.js"></script>
