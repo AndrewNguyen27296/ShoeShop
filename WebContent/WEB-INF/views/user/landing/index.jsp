@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
-
 <div class="col-md-9">
 	<!-- 6 Latest Product / shuffle  -->
 	<div class="biseller-info">
@@ -14,9 +13,9 @@
 				<li>
 					<div class="biseller-column">
 					<a href="detail/${l.id}">
-						<img src="assets/upload/products/files/${l.productImages[0].image}" class="img-responsive" alt="" class="veiw-img"> 
+						<img src="assets/upload/products/files/${l.productImages[0].image}" alt="" class="veiw-img" width="100%" height="150"> 
 					</a>	
-						<a href="#"><i class="new"></i></a>
+						<a><i class="new"></i></a>
 						<div class="biseller-name">
 							<h4>${l.name}</h4>
 							<p>
@@ -61,7 +60,6 @@
 	<script src="assets/js/jquery.flexisel.js"></script>
 	<!-- end slide show Latest Product -->
 
-
 	<!-- 12 Relevant Product 1 / random -->
 	<div class="best-seller">
 		<div class="biseller-info">
@@ -73,10 +71,8 @@
 					<li>
 						<div class="biseller-column">
 							<a href="detail/${r.id}">
-								<img
-									src="assets/upload/products/files/${r.productImages[0].image}"
-									class="img-responsive" alt="" class="veiw-img"> <a
-									href="#"><i class="new"></i></a>
+								<img src="assets/upload/products/files/${r.productImages[0].image}" alt="" class="veiw-img" width="100%" height="150">
+								<a><i class="new"></i></a>
 							</a>
 							<div class="biseller-name">
 								<h4>${r.name}</h4>
@@ -88,13 +84,11 @@
 						</div>
 					</li>
 				</c:forEach>
-
 			</ul>
 		</div>
 
 	</div>
 	<!-- end 12 Relevant Product 1 / random -->
-
 
 	<!-- slide show Relevant Product 1 -->
 	<script>
@@ -126,21 +120,19 @@
 	</script>
 	<!-- end slide show Relevant Product 1 -->
 
-
 	<!-- 12 Relevant Product 2 / random -->
 	<div class="best-seller">
-
+		<h4 class="new-models" style="font-size: 2em;">
+			<s:message code="index.brand" />
+		</h4>
 		<div class="biseller-info">
-
 			<ul id="flexiselDemo5">
 				<c:forEach items="${random2}" var="r2">
 					<li>
-						<div class="biseller-column1">
+						<div class="biseller-column">
 							<a href="detail/${r2.id}">
-								<img
-									src="assets/upload/products/files/${r2.productImages[0].image}"
-									class="img-responsive" alt="" class="veiw-img"> 
-									<a><i class="new"></i></a>
+								<img src="assets/upload/products/files/${r2.productImages[0].image}" alt="" class="veiw-img" width="100%" height="150"> 
+								<a><i class="new"></i></a>
 							</a>
 							<div class="biseller-name">
 								<h4>${r2.name}</h4>
@@ -151,7 +143,6 @@
 						</div>
 					</li>
 				</c:forEach>
-
 			</ul>
 		</div>
 	</div>
@@ -161,28 +152,27 @@
 	<script>
 		 $(window).load(function() {
 			$("#flexiselDemo5").flexisel({
-				visibleItems: 3,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,    		
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-		    	responsiveBreakpoints: { 
-		    		portrait: { 
-		    			changePoint:480,
-		    			visibleItems: 1
-		    		}, 
-		    		landscape: { 
-		    			changePoint:640,
-		    			visibleItems: 2
-		    		},
-		    		tablet: { 
-		    			changePoint:768,
-		    			visibleItems: 3
-		    		}
-		    	}
-		    });
-		    
+				visibleItems : 3,
+				animationSpeed : 1000,
+				autoPlay : true,
+				autoPlaySpeed : 3000,
+				pauseOnHover : true,
+				enableResponsiveBreakpoints : true,
+				responsiveBreakpoints : {
+					portrait : {
+						changePoint : 480,
+						visibleItems : 1
+					},
+					landscape : {
+						changePoint : 640,
+						visibleItems : 2
+					},
+					tablet : {
+						changePoint : 768,
+						visibleItems : 3
+					}
+				}
+			});
 		});
    	</script>
 	<script src="assets/js/jquery.flexisel.js"></script>
